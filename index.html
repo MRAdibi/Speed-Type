@@ -17,26 +17,27 @@
 <body>
 
     <!-- createed box content, this for getting start for typing -->
-    <div class="container hidden">
+    <div class="container text-select">
         <div class="d-flex flex-column justify-content-center box-content">
             <h3 class="text-center">Add your text</h3>
             <p class="text-center">add a custome text in the input box or use random text button</p>
             <div class="input-group">
-                <textarea class="form-control m-5" name="" id="" cols="30" rows="10"
+                <textarea class="form-control m-5 input-text" name="" id="" cols="30" rows="10"
                     placeholder="Add your text..."></textarea>
             </div>
             <div class="d-flex justify-content-around">
                 <!-- this button will create a random text for user -->
-                <button type="button" class="btn btn-dark">create a random text and start type</button>
+                <button type="button" class="btn btn-dark px-5 custom-text-btn">create a random text and start
+                    type</button>
                 <!-- This button prepares the user's input content for typing -->
-                <button type="button" class="btn btn-success px-5">Accept text and start Type</button>
+                <button type="button" class="btn btn-success px-5 random-text-btn">Accept text and start Type</button>
             </div>
         </div>
     </div>
 
 
     <!-- add the main type section -->
-    <div class="container">
+    <div class="container type-section hidden">
         <div class="f-flex flex-column type-box">
             <h3 class="text-center mt-3">Start typing ⌨⌨</h3>
             <div class="d-flex justify-content-evenly mt-5 mb-3 border-bottom border-2 border-secondary">
@@ -46,9 +47,9 @@
                 <p><span class="fw-bold">setting</span> <img src="Img/gear.png" alt="" style="width: 30px;"></p>
             </div>
             <div class="d-flex justify-content-center type-box border border-2 border-secondary m-4">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit quia placeat, sequi delectus
-                    numquam optio similique cupiditate vel quisquam ab voluptatibus obcaecati suscipit libero cumque
-                    nulla autem? Quae, adipisci deleniti.</p>
+                <p class="paragraph">
+                    Please be patient, your text will be ready soon ⏳⏳⏳
+                </p>
             </div>
         </div>
     </div>

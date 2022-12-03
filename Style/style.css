@@ -32,3 +32,15 @@ body {
     padding: 8px;
     border-radius: 15px;
 }
+
+
+/* Currect word */
+.currect {
+    color: green;
+}
+
+
+/* Incorrect word */
+.incorrect {
+    color: red;
+}
