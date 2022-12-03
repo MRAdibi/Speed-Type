@@ -13,7 +13,7 @@ body {
     background: linear-gradient(to top left, #141E30, #243B55)
 }
 
-
+/* this is for text select section */
 .box-content {
     background-color: #f5f6fa;
     padding: 60px;
@@ -23,4 +23,12 @@ body {
 /* This class is to hide the class */
 .hidden {
     display: none;
+}
+
+
+/* type box section */
+.type-box {
+    background-color: #f5f6fa;
+    padding: 8px;
+    border-radius: 15px;
 }
