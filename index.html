@@ -5,15 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Main CSS File -->
     <link rel="stylesheet" href="Style/style.css">
+
     <title>Speed Type App</title>
 </head>
 
 <body>
 
+    <!-- createed box content, this for getting start for typing -->
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center box-content">
+            <h3 class="text-center">Add your text</h3>
+            <p class="text-center">add a custome text in the input box or use random text button</p>
+            <div class="input-group">
+                <textarea class="form-control m-5" name="" id="" cols="30" rows="10"
+                    placeholder="Add your text..."></textarea>
+            </div>
+            <div class="d-flex justify-content-around">
+                <!-- this button will create a random text for user -->
+                <button type="button" class="btn btn-dark">create a random text and start type</button>
+                <!-- This button prepares the user's input content for typing -->
+                <button type="button" class="btn btn-success px-5">Accept text and start Type</button>
+            </div>
+        </div>
+    </div>
 
 
-
+    <!-- Bootstrap CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- Main Javascript File -->
     <script src="JS/script.js"></script>
 </body>
 

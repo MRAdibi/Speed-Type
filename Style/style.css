@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to top left, #141E30, #243B55)
+}
+
+
+.box-content {
+    background-color: #f5f6fa;
+    padding: 60px;
+    border-radius: 15px;
+}
+
+/* This class is to hide the class */
+.hidden {
+    display: none;
+}
