@@ -1,5 +1,7 @@
-// Set variables or get elements from document
+// Get a random paragraph
 const PARAGRAPH_API_GET = "http://api.quotable.io/random"
+
+// Set variables or get elements from document
 const input = document.querySelector('.input-text')
 const randomTextBtn = document.querySelector('.custom-text-btn')
 const customTextBtn = document.querySelector('.random-text-btn')
@@ -9,7 +11,7 @@ const typeSection = document.querySelector('.type-section')
 const documentTime = document.querySelector('.time')
 const documentIncorrect = document.querySelector('.incorrect-text')
 const documentWPM = document.querySelector('.wpm')
-// current time
+// time left
 let time = 0
 // all keydown
 let allTyped = 0
@@ -21,6 +23,8 @@ let paragraphIndex = 0
 let isTextOk = false;
 // and so WPM 😁😁
 let WPM = 0;
+// patagraph index
+let howMuchIndex = 0;
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -35,6 +39,7 @@ function getParagraph() {
 // render text to element
 async function renderNewParagraph() {
     const paragraph = await getParagraph()
+    howMuchIndex = paragraph.length
     documentParagraph.innerHTML = ""
     paragraph.split('').forEach(character => {
         const characterSpan = document.createElement("span")
@@ -111,12 +116,15 @@ document.addEventListener('keydown', (e) => {
         // check is keydown currect or not and then add the styles
         if (spanParagraph[paragraphIndex].innerHTML == e.key) {
             spanParagraph[paragraphIndex].classList.add('currect')
-            spanParagraph[paragraphIndex + 1].classList.add('current')
-            spanParagraph[paragraphIndex].classList.remove('current')
+            spanParagraph[paragraphIndex].classList.toggle('current')
             // Update Index
             paragraphIndex += 1
             // Update allType
             allTyped += 1
+            // Update progress
+            const progress = (paragraphIndex / howMuchIndex) * 100
+            document.querySelector('.progress div').style.width = `${progress}%`
+
         } else if (!("Shift" == e.key || "Alt" == e.key || "Ctrl" == e.key || "Backspace" == e.key)) {
             // add incorrect style to the code
             spanParagraph[paragraphIndex].classList.add('incorrect')
@@ -140,4 +148,6 @@ const calcWPM = setInterval(() => {
     // add WPM to the UI each 1s
     documentWPM.textContent = `💪🏻 WPM : ${WPM}`
 }, 1000)
+
+
 
