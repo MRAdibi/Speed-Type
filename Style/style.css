@@ -13,6 +13,12 @@ body {
     background: linear-gradient(to top left, #141E30, #243B55)
 }
 
+
+.paragraph {
+    font-size: 25px;
+}
+
+
 /* this is for text select section */
 .box-content {
     background-color: #f5f6fa;
@@ -36,11 +42,19 @@ body {
 
 /* Currect word */
 .currect {
-    color: green;
+    background-color: #2ecc7096;
+    color: #27ae60;
 }
 
 
 /* Incorrect word */
 .incorrect {
-    color: red;
+    background-color: #e74d3c5d;
+    color: #c0392b;
+}
+
+/* current word style */
+.current {
+    color: #2c3e50;
+    text-decoration: underline;
 }
