@@ -70,10 +70,15 @@ customTextBtn.addEventListener('click', () => {
         documentTime.textContent = `⏳ Time : ${time}`
     }, 1000)
     if (input.value == "") {
-        // render a random paragraph
-        renderNewParagraph();
-        // hide the box
-        hiddenClass()
+        // Check the internet 
+        if (window.navigator.onLine) {
+            // render a random paragraph
+            renderNewParagraph();
+            // hide the box
+            hiddenClass()
+        } else {
+            document.querySelector('.error-conection').classList.remove('hidden')
+        }
         // render custome paragraph from input
     } else {
         documentParagraph.innerHTML = ""
@@ -99,10 +104,17 @@ randomTextBtn.addEventListener('click', () => {
         time += 1
         documentTime.textContent = `⏳ Time : ${time}`
     }, 1000)
-    // render a random paragraph
-    renderNewParagraph();
-    // hide the box
-    hiddenClass()
+
+    // Check the internet 
+    if (window.navigator.onLine) {
+        // render a random paragraph
+        renderNewParagraph();
+        // hide the box
+        hiddenClass()
+    } else {
+        document.querySelector('.error-conection').classList.remove('hidden')
+    }
+
 })
 
 
