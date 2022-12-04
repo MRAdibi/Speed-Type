@@ -78,6 +78,7 @@ customTextBtn.addEventListener('click', () => {
     } else {
         documentParagraph.innerHTML = ""
         const paragraphInput = input.value;
+        howMuchIndex = paragraphInput.length
         paragraphInput.split('').forEach((character) => {
             const spanInput = document.createElement('span')
             spanInput.innerHTML = character;
