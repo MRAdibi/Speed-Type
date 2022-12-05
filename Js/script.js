@@ -12,7 +12,7 @@ const documentTime = document.querySelector('.time')
 const documentIncorrect = document.querySelector('.incorrect-text')
 const documentWPM = document.querySelector('.wpm')
 const wellDownSection = document.querySelector('.well-down')
-const restartBtn = document.querySelector('.restart-btn')
+const restartBtn = document.querySelectorAll('.restart-btn')
 const result = document.querySelector('.restart-text')
 // time left
 let time = 0
@@ -174,5 +174,8 @@ const calcWPM = setInterval(() => {
 
 
 
-// handle restart Btn
-restartBtn.addEventListener('click', () => location.reload())
+// handle restart Btn in result section
+restartBtn.forEach((e) => {
+    e.addEventListener('click', () => location.reload())
+})
+
