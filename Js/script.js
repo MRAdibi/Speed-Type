@@ -59,7 +59,6 @@ async function renderNewParagraph() {
 
 
 
-
 // a function to add and remove hidden class
 const hiddenClass = () => {
     // hide the unusable elements in UI
@@ -116,12 +115,11 @@ randomTextBtn.addEventListener('click', () => {
 })
 
 
-
-
 // Type system 
 document.addEventListener('keydown', (e) => {
     // check the text is ok or not
     if (isTextOk) {
+        // In this part, we tell the program to start counting when the user presses a key And because this operation does not start from the beginning again, we use "isTypeStart"
         if (!isTypeStart) {
             let timeSet = setInterval(() => {
                 time += 1
@@ -179,7 +177,6 @@ const calcWPM = setInterval(() => {
 restartBtn.forEach((e) => {
     e.addEventListener('click', () => location.reload())
 })
-
 
 
 // customize color 
