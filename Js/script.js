@@ -169,7 +169,7 @@ const calcWPM = setInterval(() => {
     if (WPM <= 0 || WPM == NaN) WPM = 0
     // add WPM to the UI each 1s
     documentWPM.textContent = `💪🏻 WPM : ${WPM}`
-}, 1000)
+}, 100)
 
 
 
