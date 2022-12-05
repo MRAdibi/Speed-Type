@@ -11,6 +11,9 @@ const typeSection = document.querySelector('.type-section')
 const documentTime = document.querySelector('.time')
 const documentIncorrect = document.querySelector('.incorrect-text')
 const documentWPM = document.querySelector('.wpm')
+const wellDownSection = document.querySelector('.well-down')
+const restartBtn = document.querySelector('.restart-btn')
+const result = document.querySelector('.restart-text')
 // time left
 let time = 0
 // all keydown
@@ -36,6 +39,7 @@ function getParagraph() {
         .then(res => res.json())
         .then(data => data.content)
 }
+
 // render text to element
 async function renderNewParagraph() {
     const paragraph = await getParagraph()
@@ -137,7 +141,13 @@ document.addEventListener('keydown', (e) => {
             // Update progress
             const progress = (paragraphIndex / howMuchIndex) * 100
             document.querySelector('.progress div').style.width = `${progress}%`
-            
+            // check is progress completed or not and handle it
+            if (progress == 100) {
+                typeSection.classList.toggle('hidden')
+                wellDownSection.classList.toggle('hidden')
+                result.textContent += ` ${incorrectType >= 12 ? ` but You need to be a little more careful in typing🙃, you have ${incorrectType} incorrect word` : incorrectType >= 6 ? ` Your accuracy is good😁, you have ${incorrectType} incorrect word` : incorrectType < 6 ? ` Your accuracy is very high🥳,you have ${incorrectType} incorrect word` : ` sorry but your type was bad😢`} and finally your speed was ${WPM}`
+            }
+
         } else if (!("Shift" == e.key || "Alt" == e.key || "Ctrl" == e.key || "Backspace" == e.key)) {
             // add incorrect style to the code
             spanParagraph[paragraphIndex].classList.add('incorrect')
@@ -164,3 +174,5 @@ const calcWPM = setInterval(() => {
 
 
 
+// handle restart Btn
+restartBtn.addEventListener('click', () => location.reload())
