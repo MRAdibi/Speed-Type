@@ -161,7 +161,6 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
-
 // calculate the WPM
 const calcWPM = setInterval(() => {
     // calculate the WPm
