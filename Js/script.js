@@ -29,6 +29,8 @@ let isTextOk = false;
 let WPM = 0;
 // patagraph index
 let howMuchIndex = 0;
+// This variable is to check if typing has started or not
+let isTypeStart = false;
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -69,10 +71,6 @@ const hiddenClass = () => {
 
 // Handle custome text btn 
 customTextBtn.addEventListener('click', () => {
-    let timeSet = setInterval(() => {
-        time += 1
-        documentTime.textContent = `⏳ Time : ${time}`
-    }, 1000)
     if (input.value == "") {
         // Check the internet 
         if (window.navigator.onLine) {
@@ -105,11 +103,6 @@ customTextBtn.addEventListener('click', () => {
 
 // handle random text btn
 randomTextBtn.addEventListener('click', () => {
-    let timeSet = setInterval(() => {
-        time += 1
-        documentTime.textContent = `⏳ Time : ${time}`
-    }, 1000)
-
     // Check the internet 
     if (window.navigator.onLine) {
         // render a random paragraph
@@ -129,6 +122,13 @@ randomTextBtn.addEventListener('click', () => {
 document.addEventListener('keydown', (e) => {
     // check the text is ok or not
     if (isTextOk) {
+        if (!isTypeStart) {
+            let timeSet = setInterval(() => {
+                time += 1
+                documentTime.textContent = `⏳ Time : ${time}`
+            }, 1000)
+            isTypeStart = !isTypeStart
+        }
         // create the span tag to add to the document for each index
         const spanParagraph = documentParagraph.querySelectorAll('span')
         // check is keydown currect or not and then add the styles
