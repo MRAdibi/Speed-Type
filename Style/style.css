@@ -58,3 +58,29 @@ body {
     color: #2c3e50;
     text-decoration: underline;
 }
+
+/* Final section and congratulations typing */
+.well-down {
+    background-color: #f5f6fa;
+    border-radius: 15px;
+}
+
+.well-down h1 {
+    color: #353b48;
+}
+
+.well-down img {
+    width: 300px; 
+    margin: 20px;
+}
+
+.well-down p {
+    color: #2f3640;
+    font-size: 30px;
+}
+
+.well-down #restart {
+    color: #0d0d0e81;
+    font-size: 15px;
+    font-weight: bold;
+}

@@ -39,6 +39,7 @@ function getParagraph() {
 // render text to element
 async function renderNewParagraph() {
     const paragraph = await getParagraph()
+    // set how much index is in the paragraph to calculate WPM
     howMuchIndex = paragraph.length
     documentParagraph.innerHTML = ""
     paragraph.split('').forEach(character => {
@@ -58,8 +59,6 @@ const hiddenClass = () => {
     textSelectSection.classList.toggle('hidden')
     typeSection.classList.toggle('hidden')
 }
-
-
 
 
 
@@ -83,6 +82,7 @@ customTextBtn.addEventListener('click', () => {
     } else {
         documentParagraph.innerHTML = ""
         const paragraphInput = input.value;
+        // set how much index is in the paragraph to calculate WPM
         howMuchIndex = paragraphInput.length
         paragraphInput.split('').forEach((character) => {
             const spanInput = document.createElement('span')
@@ -137,7 +137,7 @@ document.addEventListener('keydown', (e) => {
             // Update progress
             const progress = (paragraphIndex / howMuchIndex) * 100
             document.querySelector('.progress div').style.width = `${progress}%`
-
+            
         } else if (!("Shift" == e.key || "Alt" == e.key || "Ctrl" == e.key || "Backspace" == e.key)) {
             // add incorrect style to the code
             spanParagraph[paragraphIndex].classList.add('incorrect')
