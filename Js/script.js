@@ -14,6 +14,7 @@ const documentWPM = document.querySelector('.wpm')
 const wellDownSection = document.querySelector('.well-down')
 const restartBtn = document.querySelectorAll('.restart-btn')
 const result = document.querySelector('.restart-text')
+const customeColors = document.querySelectorAll('.color')
 // time left
 let time = 0
 // all keydown
@@ -179,3 +180,11 @@ restartBtn.forEach((e) => {
     e.addEventListener('click', () => location.reload())
 })
 
+
+
+// customize color 
+customeColors.forEach((element) => {
+    element.addEventListener('click', (e) => {
+        document.body.style.background = e.target.getAttribute('data-color')
+    })
+})

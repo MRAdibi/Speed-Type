@@ -49,8 +49,9 @@
                 <p class="fw-bold incorrect-text">⛔ incorrect : 0</p>
                 <p class="fw-bold time">⏳ Time : 0</p>
                 <p class="fw-bold wpm">💪🏻 WPM : 0</p>
-                <p class="fw-bold" style="cursor: pointer;"><span>setting</span> <img src="Img/gear.png" alt=""
-                        style="width: 30px;"></p>
+                <p class="fw-bold" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <span>setting</span> <img src="Img/gear.png" alt="" style="width: 30px;">
+                </p>
                 <p class="fw-bold restart-btn" style="cursor: pointer;"><span>setting</span> <img src="Img/Again.png"
                         alt="" style="width: 30px;"></p>
             </div>
@@ -78,6 +79,71 @@
         <button class="btn btn-warning m-4 restart-btn">Restart Aplication</button>
     </div>
 
+
+    <!-- a modal to change the style of the app -->
+    <div class="modal fade modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static"
+        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">You can set a new style 😋</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Background</h5>
+                    <hr>
+                    <div class="d-flex flex-wrap">
+                        <div class="customize">
+                            <div class="color" style="background: var(--coll-blues);" data-color="var(--coll-blues)">
+                            </div>
+                            <p class="text-center">Coll Blues</p>
+                        </div>
+                        <div class="customize">
+                            <div class="color" style="background: var(--dark--ocean);" data-color="var(--dark--ocean)">
+                            </div>
+                            <p class="text-center">Dark Ocean</p>
+                        </div>
+                        <div class="customize">
+                            <div class="color" style="background: var(--amin);" data-color="var(--amin)"></div>
+                            <p class="text-center">Amin</p>
+                        </div>
+                        <div class="customize">
+                            <div class="color" style="background: var(--bighead);" data-color="var(--bighead)"></div>
+                            <p class="text-center">Bighead</p>
+                        </div>
+                        <div class="customize">
+                            <div class="color" style="background: var(--piggy-pink);" data-color="var(--piggy-pink)">
+                            </div>
+                            <p class="text-center">Piggy Pink</p>
+                        </div>
+                        <div class="customize">
+                            <div class="color" style="background: var(--ultra-voilet);"
+                                data-color="var(--ultra-voilet)"></div>
+                            <p class="text-center">Ultra Voilet</p>
+                        </div>
+                        <div class="customize">
+                            <div class="color" style="background: var(--frost);" data-color="var(--frost)"></div>
+                            <p class="text-center">Frost</p>
+                        </div>
+                        <div class="customize">
+                            <div class="color" style="background: var(--miaka);" data-color="var(--miaka)"></div>
+                            <p class="text-center">Miaka</p>
+                        </div>
+                        <div class="customize">
+                            <div class="color" style="background: var(--blurry-beach);"
+                                data-color="var(--blurry-beach)"></div>
+                            <p class="text-center">Blurry Beach</p>
+                        </div>
+                        <div class="customize">
+                            <div class="color" style="background: var(--virgin-america);"
+                                data-color="var(--virgin-america)"></div>
+                            <p class="text-center">Virgin-A</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
