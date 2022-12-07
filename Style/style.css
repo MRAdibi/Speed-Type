@@ -26,7 +26,8 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: var(--primary)
+    background: var(--primary);
+    background-size: cover !important; 
 }
 
 
@@ -107,6 +108,7 @@ body {
 }
 
 .customize div {
+    background-size: cover !important;
     width: 70px; 
     height: 70px;
     border-top-right-radius: 9px;
