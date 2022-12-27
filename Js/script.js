@@ -35,6 +35,13 @@ let isTypeStart = false;
 
 
 
+// set background from localStorage
+if (localStorage.getItem('background') == null) {
+    document.body.style.background = "var(--primary)"
+} else {
+    document.body.style.background = localStorage.getItem('background')
+}
+
 
 // fetch content from the API
 function getParagraph() {
@@ -182,5 +189,6 @@ restartBtn.forEach((e) => {
 customeColors.forEach((element) => {
     element.addEventListener('click', (e) => {
         document.body.style.background = e.target.getAttribute('data-color')
+        localStorage.setItem("background", e.target.getAttribute('data-color'))
     })
 })
