@@ -134,6 +134,8 @@ document.addEventListener('keydown', (e) => {
             }, 1000)
             isTypeStart = !isTypeStart
         }
+        // disable a key default action in browser
+        e.preventDefault()
         // create the span tag to add to the document for each index
         const spanParagraph = documentParagraph.querySelectorAll('span')
         // check is keydown currect or not and then add the styles
@@ -153,7 +155,6 @@ document.addEventListener('keydown', (e) => {
                 wellDownSection.classList.toggle('hidden')
                 result.textContent += ` ${incorrectType >= 12 ? ` but You need to be a little more careful in typing🙃, you have ${incorrectType} incorrect word` : incorrectType >= 6 ? ` Your accuracy is good😁, you have ${incorrectType} incorrect word` : incorrectType < 6 ? ` Your accuracy is very high🥳,you have ${incorrectType} incorrect word` : ` sorry but your type was bad😢`} and finally your speed was ${WPM}`
             }
-
         } else if (!("Shift" == e.key || "Alt" == e.key || "Ctrl" == e.key || "Backspace" == e.key)) {
             // add incorrect style to the code
             spanParagraph[paragraphIndex].classList.add('incorrect')
